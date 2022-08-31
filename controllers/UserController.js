@@ -1,9 +1,12 @@
 const User = require("../models/User");
+const helpers = require("./helpers");
+
+const validParams = ["name", "phone", "email", "uid"];
 
 async function create(req, res, next) {
   let params = helpers.buildParams(validParams, req.body);
 
-  Lawyer.create(params)
+  User.create(params)
     .then((lawyer) => {
       res.json(lawyer);
       req.lawyer = lawyer;
