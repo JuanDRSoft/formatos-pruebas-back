@@ -47,7 +47,7 @@ app.use(function (err, req, res, next) {
 });
 
 mongoose.connect(
-  "mongodb+srv://solutio:solutio@cluster0.e2gxom9.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://solutio:solutio@cluster0.e2gxom9.mongodb.net/test"
 );
 
 module.exports = app;
