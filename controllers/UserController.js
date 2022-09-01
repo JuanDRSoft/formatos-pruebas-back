@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const helpers = require("./helpers");
+const generarJWT = require("../helpers/generarJWT.js");
 
 const validParams = ["name", "phone", "email", "uid"];
 
@@ -74,11 +75,31 @@ function findByEmail(req, res, next) {
   User.findOne({ email: email, uid: uid })
     .then((user) => {
       req.user = user;
-      res.json(user);
+      res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        token: generarJWT(user._id),
+      });
     })
     .catch((err) => {
       res.json(err);
     });
 }
 
-module.exports = { index, show, create, update, find, destroy, findByEmail };
+function perfil(req, res) {
+  const { usuario } = req;
+
+  res.json(usuario);
+}
+
+module.exports = {
+  index,
+  show,
+  create,
+  update,
+  find,
+  destroy,
+  findByEmail,
+  perfil,
+};

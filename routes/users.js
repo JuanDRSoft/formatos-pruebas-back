@@ -13,4 +13,6 @@ router
 
 router.route("/find/email").post(UserController.findByEmail);
 
+router.post("/perfil", UserController.perfil);
+
 module.exports = router;
