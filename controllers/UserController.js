@@ -90,7 +90,12 @@ function findByEmail(req, res, next) {
 function perfil(req, res) {
   const { usuario } = req;
 
-  res.json({ _id: usuario._id, email: usuario.email, name: usuario.name });
+  res.json({
+    _id: usuario._id,
+    email: usuario.email,
+    name: usuario.name,
+    token: usuario.token,
+  });
 }
 
 module.exports = {
