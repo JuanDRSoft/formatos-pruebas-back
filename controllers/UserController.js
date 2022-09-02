@@ -8,9 +8,9 @@ async function create(req, res, next) {
   let params = helpers.buildParams(validParams, req.body);
 
   User.create(params)
-    .then((lawyer) => {
-      res.json(lawyer);
-      req.lawyer = lawyer;
+    .then((user) => {
+      res.json(user);
+      req.lawyer = user;
     })
     .catch((error) => {
       console.log(error);
@@ -31,7 +31,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  res.json(req.lawyer);
+  res.json(req.user);
 }
 
 function update(req, res) {
@@ -90,7 +90,7 @@ function findByEmail(req, res, next) {
 function perfil(req, res) {
   const { usuario } = req;
 
-  res.json(usuario);
+  res.json({ _id: usuario._id, email: usuario.email, name: usuario.name });
 }
 
 module.exports = {
