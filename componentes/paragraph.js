@@ -42,6 +42,20 @@ function SUBTITULO_IZQ_FECHA() {
     },
   });
 }
+function SUBTITULO_DER_FECHA(text, spacing) {
+  return new Paragraph({
+    children: [
+      new TextRun({
+        text: text,
+        alignment: AlignmentType.RIGHT,
+        bold: true,
+      }),
+    ],
+    spacing: {
+      after: spacing,
+    },
+  });
+}
 
 function SUBTITULO_IZQ_STRONG(text, spacing) {
   return new Paragraph({
@@ -101,4 +115,5 @@ module.exports = {
   ITEM_RESALTADO,
   PARAGRAFO,
   PARAGRAFO_ONLY,
+  SUBTITULO_DER_FECHA,
 };

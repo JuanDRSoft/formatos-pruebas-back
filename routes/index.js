@@ -9,4 +9,6 @@ router
   .get(DocumentoController.index)
   .post(DocumentoController.generateDoc);
 
+router.route("/cartaTCTFVT").post(DocumentoController.generateCartaTCTFVT);
+
 module.exports = router;

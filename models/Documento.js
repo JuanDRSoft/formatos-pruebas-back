@@ -8,6 +8,7 @@ let documentShema = new mongoose.Schema({
   city: String,
   phone: String,
   email: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
 const Documento = mongoose.model("Documento", documentShema);

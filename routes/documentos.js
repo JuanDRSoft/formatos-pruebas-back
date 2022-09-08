@@ -7,6 +7,6 @@ const DocumentoController = require("../controllers/DocumentController");
 router
   .route("/")
   .get(DocumentoController.index)
-  .post(DocumentoController.generateDoc);
+  .post(DocumentoController.generateDoc, DocumentoController.create);
 
 module.exports = router;
