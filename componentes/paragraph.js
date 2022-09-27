@@ -91,6 +91,10 @@ function ITEM_RESALTADO(item, text, spacing) {
   });
 }
 
+function TEXTO_RESALTADO(text) {
+  return new TextRun({ text, alignment: AlignmentType.CENTER, bold: true });
+}
+
 function PARAGRAFO(text) {
   return new TextRun({
     text,
@@ -116,4 +120,5 @@ module.exports = {
   PARAGRAFO,
   PARAGRAFO_ONLY,
   SUBTITULO_DER_FECHA,
+  TEXTO_RESALTADO,
 };

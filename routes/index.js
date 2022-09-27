@@ -11,4 +11,6 @@ router
 
 router.route("/cartaTCTFVT").post(DocumentoController.generateCartaTCTFVT);
 
+router.route("/contratoTTI").post(DocumentoController.generateContratoTTI);
+
 module.exports = router;
