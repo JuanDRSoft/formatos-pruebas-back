@@ -19,6 +19,7 @@ const validParams = [
   "city",
   "phone",
   "email",
+  "user",
 ];
 const paragraph = require("../componentes/paragraph");
 
