@@ -33,6 +33,19 @@ function find(req, res, next) {
       next(err);
     });
 }
+
+function findByUser(req, res, next) {
+  Documento.find({ user: req.params.id })
+    .sort([["creado", -1]])
+    .then((administrador) => {
+      req.administrador = administrador;
+      next();
+    })
+    .catch((err) => {
+      next(err);
+    });
+}
+
 function index(req, res) {
   Documento.find({})
     .then((doc) => {
@@ -901,4 +914,5 @@ module.exports = {
   generateDoc,
   generateCartaTCTFVT,
   generateContratoTTI,
+  findByUser,
 };
