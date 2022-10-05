@@ -1,16 +1,5 @@
 const Documento = require("../models/Documento");
 const helpers = require("./helpers");
-const docx = require("docx");
-const {
-  Document,
-  Packer,
-  Paragraph,
-  TextRun,
-  HeadingLevel,
-  AlignmentType,
-  SymbolRun,
-  UnderlineType,
-} = docx;
 const validParams = [
   "name",
   "numID",
@@ -21,10 +10,10 @@ const validParams = [
   "email",
   "user",
 ];
-const paragraph = require("../componentes/paragraph");
 const { tutela } = require("../componentes/tutela");
 const { cartaTCTFVT } = require("../componentes/cartaTCTFVT");
 const { contratoTTI } = require("../componentes/contratoTTI");
+const { contratoObra } = require("../componentes/contratoObra");
 
 function find(req, res, next) {
   Documento.findById(req.params.id)
@@ -115,6 +104,11 @@ async function generateContratoTTI(req, res) {
   contratoTTI(params, res);
 }
 
+async function generateContratoObra(req, res) {
+  let params = req.body;
+  contratoObra(params, res);
+}
+
 module.exports = {
   index,
   show,
@@ -125,5 +119,6 @@ module.exports = {
   generateDoc,
   generateCartaTCTFVT,
   generateContratoTTI,
+  generateContratoObra,
   findByUser,
 };
