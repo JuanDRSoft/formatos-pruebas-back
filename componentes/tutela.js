@@ -9,11 +9,12 @@ const {
   SymbolRun,
   UnderlineType,
 } = docx;
+const paragraph = require("../componentes/paragraph");
 
 async function tutela(req, res) {
   const doc = new Document();
   var now = new Date();
-  const { name, numID, adress, factory, city, phone, email } = params;
+  const { name, numID, adress, factory, city, phone, email } = req;
 
   doc.addSection({
     properties: {},
