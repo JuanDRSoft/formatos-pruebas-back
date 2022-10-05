@@ -76,7 +76,7 @@ async function llamadoAtencion(req, res) {
           paragraph.PARAGRAFO(
             "Por lo anterior, me permito hacerle un llamado de atención para que "
           ),
-          paragraph.paragraph(recommendation),
+          paragraph.PARAGRAFO(recommendation),
           paragraph.PARAGRAFO(
             ", debiendo tomar las medidas necesarias para que los riesgos disminuyan y los resultados sean cada vez mejores."
           ),
