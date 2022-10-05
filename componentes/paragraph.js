@@ -27,7 +27,7 @@ function TITULO(text, spacing) {
   });
 }
 
-function SUBTITULO_IZQ_FECHA() {
+function SUBTITULO_IZQ_FECHA(now) {
   return new Paragraph({
     children: [
       new TextRun({

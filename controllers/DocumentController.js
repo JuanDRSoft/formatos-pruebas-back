@@ -14,6 +14,7 @@ const { tutela } = require("../componentes/tutela");
 const { cartaTCTFVT } = require("../componentes/cartaTCTFVT");
 const { contratoTTI } = require("../componentes/contratoTTI");
 const { contratoObra } = require("../componentes/contratoObra");
+const { llamadoAtencion } = require("../componentes/llamadoAtencion");
 
 function find(req, res, next) {
   Documento.findById(req.params.id)
@@ -109,6 +110,11 @@ async function generateContratoObra(req, res) {
   contratoObra(params, res);
 }
 
+async function generateLlamadoAtencion(req, res) {
+  let params = req.body;
+  llamadoAtencion(params, res);
+}
+
 module.exports = {
   index,
   show,
@@ -120,5 +126,6 @@ module.exports = {
   generateCartaTCTFVT,
   generateContratoTTI,
   generateContratoObra,
+  generateLlamadoAtencion,
   findByUser,
 };

@@ -15,4 +15,8 @@ router.route("/contratoTTI").post(DocumentoController.generateContratoTTI);
 
 router.route("/contratoObra").post(DocumentoController.generateContratoObra);
 
+router
+  .route("/llamadoAtencion")
+  .post(DocumentoController.generateLlamadoAtencion);
+
 module.exports = router;
