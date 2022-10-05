@@ -40,85 +40,26 @@ async function contratoObra(req, res) {
     children: [
       paragraph.TITULO("CONTRATO DE OBRA PARA CONSTRUCCIÓN", 200),
 
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Nombre de la empresa constructora: "),
-          paragraph.PARAGRAFO(nameCompany),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Representante legal: "),
-          paragraph.PARAGRAFO(representative),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Nombre del obrero(a): "),
-          paragraph.PARAGRAFO(employee),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Identificado(a) con cédula No.: "),
-          paragraph.PARAGRAFO(employeeId),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Lugar de residencia: "),
-          paragraph.PARAGRAFO(employeeAddress),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Teléfonos No: "),
-          paragraph.PARAGRAFO(employeePhone),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Cargo a desempeñar: "),
-          paragraph.PARAGRAFO(work),
-        ],
-        spacing: {
-          after: 0,
-        },
-      }),
-
-      new Paragraph({
-        children: [
-          paragraph.ITEM_RESALTADO("Salario (o valor total por la obra): "),
-          paragraph.PARAGRAFO(work),
-        ],
-        spacing: {
-          after: 300,
-        },
-      }),
+      paragraph.ITEM_RESALTADO(
+        "Nombre de la empresa constructora:  ",
+        nameCompany,
+        100
+      ),
+      paragraph.ITEM_RESALTADO("Representante legal:  ", representative, 100),
+      paragraph.ITEM_RESALTADO("Nombre del obrero(a):  ", employee, 100),
+      paragraph.ITEM_RESALTADO(
+        "Identificado(a) con cédula No.:  ",
+        employeeId,
+        100
+      ),
+      paragraph.ITEM_RESALTADO("Lugar de residencia:  ", employeeAddress, 100),
+      paragraph.ITEM_RESALTADO("Teléfonos No:  ", employeePhone, 100),
+      paragraph.ITEM_RESALTADO("Cargo a desempeñar:  ", work, 100),
+      paragraph.ITEM_RESALTADO(
+        "Salario (o valor total por la obra):  ",
+        salary,
+        300
+      ),
 
       paragraph.PARAGRAFO_ONLY(
         "Entre la empresa constructora y el obrero(a), identificados como ya se anotó, se suscribe el presente CONTRATO DE OBRA PARA CONSTRUCCIÓN, regido por las siguientes cláusulas:",
@@ -321,11 +262,15 @@ async function contratoObra(req, res) {
         children: [
           paragraph.PARAGRAFO("Se firma por las partes, en la ciudad de "),
           paragraph.PARAGRAFO(city),
-          paragraph.PARAGRAFO(" en la fecha "),
-          paragraph.PARAGRAFO(now),
+          paragraph.PARAGRAFO(" el día "),
+          paragraph.PARAGRAFO(dia),
+          paragraph.PARAGRAFO(" del mes "),
+          paragraph.PARAGRAFO(mes),
+          paragraph.PARAGRAFO(" de "),
+          paragraph.PARAGRAFO(año),
         ],
         spacing: {
-          after: 300,
+          after: 500,
         },
       }),
 
