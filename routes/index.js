@@ -19,4 +19,6 @@ router
   .route("/llamadoAtencion")
   .post(DocumentoController.generateLlamadoAtencion);
 
+router.route("/solicitudPAL").post(DocumentoController.generateSolicitudPAL);
+
 module.exports = router;

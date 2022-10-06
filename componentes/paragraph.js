@@ -32,7 +32,12 @@ function SUBTITULO_IZQ_FECHA(now) {
     children: [
       new TextRun({
         text:
-          "" + now.getDate() + "/" + now.getMonth() + "/" + now.getFullYear(),
+          "" +
+          now.getDate() +
+          "/" +
+          (now.getMonth() + 1) +
+          "/" +
+          now.getFullYear(),
         alignment: AlignmentType.CENTER,
         bold: true,
       }),
@@ -42,17 +47,24 @@ function SUBTITULO_IZQ_FECHA(now) {
     },
   });
 }
-function SUBTITULO_DER_FECHA(text, spacing) {
+function SUBTITULO_DER_FECHA(ciudad, fecha) {
   return new Paragraph({
     children: [
       new TextRun({
-        text: text,
+        text:
+          ciudad +
+          ", " +
+          fecha.getDate() +
+          "/" +
+          (fecha.getMonth() + 1) +
+          "/" +
+          fecha.getFullYear(),
         alignment: AlignmentType.RIGHT,
         bold: true,
       }),
     ],
     spacing: {
-      after: spacing,
+      after: 200,
     },
   });
 }
