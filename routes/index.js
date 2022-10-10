@@ -21,4 +21,8 @@ router
 
 router.route("/solicitudPAL").post(DocumentoController.generateSolicitudPAL);
 
+router
+  .route("/autorizacionDSSPT")
+  .post(DocumentoController.generateAutorizacionDSSPT);
+
 module.exports = router;

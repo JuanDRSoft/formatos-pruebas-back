@@ -16,6 +16,7 @@ const { contratoTTI } = require("../componentes/contratoTTI");
 const { contratoObra } = require("../componentes/contratoObra");
 const { llamadoAtencion } = require("../componentes/llamadoAtencion");
 const { solicitudPAL } = require("../componentes/solicitudPAL");
+const { autorizacionDSSPT } = require("../componentes/autorizacionDSSPT");
 
 function find(req, res, next) {
   Documento.findById(req.params.id)
@@ -121,6 +122,11 @@ async function generateSolicitudPAL(req, res) {
   solicitudPAL(params, res);
 }
 
+async function generateAutorizacionDSSPT(req, res) {
+  let params = req.body;
+  autorizacionDSSPT(params, res);
+}
+
 module.exports = {
   index,
   show,
@@ -134,5 +140,6 @@ module.exports = {
   generateContratoObra,
   generateLlamadoAtencion,
   generateSolicitudPAL,
+  generateAutorizacionDSSPT,
   findByUser,
 };
