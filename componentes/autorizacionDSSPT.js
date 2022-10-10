@@ -100,17 +100,17 @@ async function autorizacionDSSPT(req, res) {
       paragraph.SUBTITULO_IZQ_STRONG(employeeId, 200),
       paragraph.SUBTITULO_IZQ_STRONG(
         "Aprobado por ______________________________",
-        200
+        300
       ),
       paragraph.SUBTITULO_IZQ_STRONG(
         "Encargado de nomina _______________________",
-        0
+        300
       ),
 
       new Paragraph({
         children: [
           paragraph.PARAGRAFO("Entrega del préstamo a través del "),
-          paragraph.PARAGRAFO(loanDelivery.value),
+          paragraph.PARAGRAFO(loanDelivery.value, 300),
           paragraph.PARAGRAFO(" n° "),
           paragraph.PARAGRAFO(deliveryNumber),
         ],
